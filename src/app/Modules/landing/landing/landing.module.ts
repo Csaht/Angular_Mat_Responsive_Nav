@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
+
 import { FooterComponent } from './footer/footer.component';
 import { MaterialModule } from '../../material/material.module';
 import { PageContentComponent } from './page-content/page-content.component';
 import { HeroComponent } from './hero/hero.component';
 import { NavListComponent } from './nav-list/nav-list.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { NavComponent } from './nav/nav.component';
+ const routes:Routes=[
+  { path :'', redirectTo:'/home',pathMatch:'full'},
+  { path :'home', component: HeroComponent}
+ ]
 
  const components:any=[
   PageContentComponent,
-  HeaderComponent,
+  NavComponent,
   FooterComponent,
   HeroComponent,
   NavListComponent,
@@ -21,13 +26,12 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     ...components,
-    
-   
   ],
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    RouterModule.forRoot(routes)
   ],
   exports:[...components]
 })

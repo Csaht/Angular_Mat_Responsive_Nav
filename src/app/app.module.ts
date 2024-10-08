@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LandingModule } from './Modules/landing/landing/landing.module';
+import { SharedModule } from './Modules/shared/shared.module';
 
 
 
@@ -24,8 +25,8 @@ import { LandingModule } from './Modules/landing/landing/landing.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-
-    LandingModule
+    // SharedModule,
+     LandingModule
    
   ],
   providers: [],
